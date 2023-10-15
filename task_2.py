@@ -1,11 +1,13 @@
 # TODO Найдите количество книг, которое можно разместить на дискете
-i_v = 1.44
-count_str = 100
-count_string = 50
-count_sym = 25
-pamyat = 4
+capacity = 1.44
+number_of_pages = 100
+number_of_lines = 50
+number_of_characters = 25
+capacity_for_one_character = 4
 
-pam = pamyat*(count_sym *count_string *count_str)/(1024*1024)
+bytes_in_kilobyte = 1024
 
-ans = round(i_v/pam)
-print("Количество книг, помещающихся на дискету:", ans)
+capacity_per_book = capacity_for_one_character*(number_of_characters *number_of_lines *number_of_pages)/(bytes_in_kilobyte*bytes_in_kilobyte)
+
+number_of_books = round(capacity/capacity_per_book)
+print("Количество книг, помещающихся на дискету:", number_of_books)
